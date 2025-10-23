@@ -142,13 +142,15 @@ namespace Yl2Trainer
 
         public override void OnLateUpdate()
         {
+            var def = ManagerSingleton<DataManager>.get;
+
             if (frozen_energy)
             {
-                ManagerSingleton<DataManager>.get.energy.ModifyEnergy((float)ManagerSingleton<DataManager>.get.energy.MaxEnergy, false);
-            }
-            if (frozen_ingame_clock)
-            {
-
+                
+                if (def != null)
+                {
+                    def.energy.ModifyEnergy((float)ManagerSingleton<DataManager>.get.energy.MaxEnergy, false);
+                }
             }
 
             if (Screen.currentResolution.width != screen.Item1 || Screen.currentResolution.height != screen.Item2 || Screen.fullScreen != screen.Item3)
