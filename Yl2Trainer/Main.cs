@@ -192,6 +192,8 @@ namespace Yl2Trainer
 
             //money
 
+            var a = ManagerSingleton<DataManager>.get;
+
             GUILayout.Label("Money", SubTitle);
             pairs[TypeOfValue.Money] = IntField(pairs[TypeOfValue.Money], GUILayout.Width(100));
 
@@ -199,14 +201,20 @@ namespace Yl2Trainer
             {
                 if (int.TryParse(pairs[TypeOfValue.Money], out int parsedValue))
                 {
-                    ManagerSingleton<DataManager>.get.money.AddMoney((float)parsedValue);
+                    if (a != null)
+                    {
+                        a.money.AddMoney((float)parsedValue);
+                    }
                 }
             }
             if (GUILayout.Button("Deduct", GUILayout.Width(100)))
             {
                 if (int.TryParse(pairs[TypeOfValue.Money], out int parsedValue))
                 {
-                    ManagerSingleton<DataManager>.get.money.AddMoney((float)parsedValue);
+                    if (a != null)
+                    {
+                        a.money.AddMoney((float)parsedValue);
+                    }
                 }
             }
 
@@ -220,7 +228,10 @@ namespace Yl2Trainer
             {
                 if (int.TryParse(pairs[TypeOfValue.skill_points], out int parsedValue))
                 {
-                    ManagerSingleton<DataManager>.get.saveGame.current_talent_points = ManagerSingleton<DataManager>.get.saveGame.current_talent_points + parsedValue;
+                    if (a != null)
+                    {
+                        a.saveGame.current_talent_points = a.saveGame.current_talent_points + parsedValue;
+                    }
                 }
             }
 
@@ -234,14 +245,20 @@ namespace Yl2Trainer
             {
                 if (int.TryParse(pairs[TypeOfValue.Tickets], out int parsedValue))
                 {
-                    ManagerSingleton<DataManager>.get.tubiTicketsManager.AddTubiTickets((int)parsedValue);
+                    if (a != null)
+                    {
+                        a.tubiTicketsManager.AddTubiTickets((int)parsedValue);
+                    }
                 }
             }
             if (GUILayout.Button("Deduct", GUILayout.Width(100)))
             {
                 if (int.TryParse(pairs[TypeOfValue.Tickets], out int parsedValue))
                 {
-                    ManagerSingleton<DataManager>.get.tubiTicketsManager.AddTubiTickets((int)-parsedValue);
+                    if (a != null)
+                    {
+                        a.tubiTicketsManager.AddTubiTickets((int)-parsedValue);
+                    }
                 }
             }
 
@@ -255,14 +272,20 @@ namespace Yl2Trainer
             {
                 if (int.TryParse(pairs[TypeOfValue.Subscribers], out int parsedValue))
                 {
-                    ManagerSingleton<DataManager>.get.utubeChannel.followers = ManagerSingleton<DataManager>.get.utubeChannel.followers + parsedValue;
+                    if (a != null)
+                    {
+                        a.utubeChannel.followers = a.utubeChannel.followers + parsedValue;
+                    }
                 }
             }
             if (GUILayout.Button("Deduct", GUILayout.Width(100)))
             {
                 if (int.TryParse(pairs[TypeOfValue.Subscribers], out int parsedValue))
                 {
-                    ManagerSingleton<DataManager>.get.utubeChannel.followers = ManagerSingleton<DataManager>.get.utubeChannel.followers - parsedValue;
+                    if (a != null)
+                    {
+                        a.utubeChannel.followers = a.utubeChannel.followers - parsedValue;
+                    }
                 }
             }
 
@@ -433,7 +456,10 @@ namespace Yl2Trainer
 
         public override void OnApplicationQuit()
         {
-            ManagerSingleton<DataManager>.get.saveGame.cheated = false;
+            if (ManagerSingleton<DataManager>.get != null)
+            {
+                ManagerSingleton<DataManager>.get.saveGame.cheated = false;
+            }
             SavePrefs();
         }
     }
