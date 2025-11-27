@@ -1,8 +1,8 @@
 # YoutubersLife2-Trainer
 Youtubers Life 2 Trainer
 
-credits:
+credits:<br>
 MelonLoader example - https://github.com/LavaGang/TestMod
 
-forks:
+forks:<br>
 https://github.com/zeropointerexception/youtubers_life2-trainer
