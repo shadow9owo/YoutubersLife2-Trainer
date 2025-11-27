@@ -3,6 +3,3 @@ Youtubers Life 2 Trainer (written in 48 hours)
 
 credits:<br>
 MelonLoader example - https://github.com/LavaGang/TestMod
-
-forks:<br>
-https://github.com/zeropointerexception/youtubers_life2-trainer
