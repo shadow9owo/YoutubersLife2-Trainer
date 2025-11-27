@@ -1,5 +1,5 @@
 # YoutubersLife2-Trainer
-Youtubers Life 2 Trainer
+Youtubers Life 2 Trainer (written in 48 hours)
 
 credits:<br>
 MelonLoader example - https://github.com/LavaGang/TestMod
